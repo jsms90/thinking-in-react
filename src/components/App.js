@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import Header from "./Header";
 import Books from "./Books/";
 import About from "./About";
-import Footer from "./Footer";
+import Footer from "./Footer/";
 
 class App extends React.Component {
   constructor() {

@@ -1,5 +1,7 @@
 import React from "react";
 
+import SocialLink from "./SocialLink";
+
 const Footer = props => (
   <footer className="text-center">
     <div className="footer-above">
@@ -17,34 +19,22 @@ const Footer = props => (
             <h3>Around the Web</h3>
             <ul className="list-inline">
               <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/leanjscom"
-                  className="btn-social btn-outline"
-                >
-                  <i className="fa fa-fw fa-github" />
-                </a>
+                <SocialLink
+                  url={"https://github.com/leanjscom"}
+                  fontAwesomeIconName={"github"}
+                />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://twitter.com/leanjscom"
-                  className="btn-social btn-outline"
-                >
-                  <i className="fa fa-fw fa-twitter" />
-                </a>
+                <SocialLink
+                  url={"https://twitter.com/leanjscom"}
+                  fontAwesomeIconName={"twitter"}
+                />
               </li>
               <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.instagram.com/leanjscom/"
-                  className="btn-social btn-outline"
-                >
-                  <i className="fa fa-fw fa-instagram" />
-                </a>
+                <SocialLink
+                  url={"https://instagram.com/leanjscom"}
+                  fontAwesomeIconName={"instagram"}
+                />
               </li>
             </ul>
           </div>
