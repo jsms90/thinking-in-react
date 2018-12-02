@@ -3,6 +3,7 @@ import React from "react";
 import Menu from "./Navigations/Menu";
 import NavBar from "./NavBar";
 import Header from "./Header";
+import Books from "./Books";
 import About from "./About";
 import Footer from "./Footer";
 import books from "../mocks/books";
@@ -32,18 +33,6 @@ class App extends React.Component {
   };
 
   render() {
-    const filters = ["All", "Web", "Mobile", "DevOps", "Essentials"];
-
-    const tabItems = filters.map(filter => (
-      <li
-        className={filter === this.state.selectedFilter ? "active" : ""}
-        key={filter}
-        onClick={() => this.selectFilter(filter)}
-      >
-        <a href="#0">{filter}</a>
-      </li>
-    ));
-
     return (
       <div id="page-wrap">
         <Menu
@@ -56,30 +45,11 @@ class App extends React.Component {
 
         <Header title="ReactJS Academy" />
 
-        <section id="books">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 text-center">
-                <h2>Books</h2>
-                <hr className="star-primary" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-12">
-                <ul className="nav nav-pills text-center">{tabItems}</ul>
-              </div>
-            </div>
-            <div className="row book-list">
-              {this.state.books.map(book => (
-                <div className="col-xs-6 col-sm-3" key={book.id}>
-                  <div className="thumbnail">
-                    <img alt="" className="img-responsive" src={book.cover} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Books
+          selectFilter={this.selectFilter}
+          selectedFilter={this.state.selectedFilter}
+          books={this.state.books}
+        />
 
         <About />
 
