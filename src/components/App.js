@@ -6,30 +6,17 @@ import Header from "./Header";
 import Books from "./Books";
 import About from "./About";
 import Footer from "./Footer";
-import books from "../mocks/books";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      books: books,
-      selectedFilter: "All",
       menu: { open: false }
     };
   }
 
   toggleMenu = () => {
     this.setState({ menu: { open: !this.state.menu.open } });
-  };
-
-  selectFilter = filter => {
-    this.setState({
-      selectedFilter: filter,
-      books:
-        filter === "All"
-          ? books
-          : books.filter(book => book.category === filter)
-    });
   };
 
   render() {
@@ -45,11 +32,7 @@ class App extends React.Component {
 
         <Header title="ReactJS Academy" />
 
-        <Books
-          selectFilter={this.selectFilter}
-          selectedFilter={this.state.selectedFilter}
-          books={this.state.books}
-        />
+        <Books />
 
         <About />
 
